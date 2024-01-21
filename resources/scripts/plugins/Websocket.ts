@@ -2,26 +2,26 @@ import Sockette from 'sockette';
 import { EventEmitter } from 'events';
 
 export class Websocket extends EventEmitter {
-    // Timer instance for this socket.
+    // このソケットのタイマーインスタンス。
     private timer: any = null;
 
-    // The backoff for the timer, in milliseconds.
+    // タイマーのバックオフ時間（ミリ秒）。
     private backoff = 5000;
 
-    // The socket instance being tracked.
+    // 追跡されているソケットインスタンス。
     private socket: Sockette | null = null;
 
-    // The URL being connected to for the socket.
+    // ソケットに接続するURL。
     private url: string | null = null;
 
-    // The authentication token passed along with every request to the Daemon.
-    // By default this token expires every 15 minutes and must therefore be
-    // refreshed at a pretty continuous interval. The socket server will respond
-    // with "token expiring" and "token expired" events when approaching 3 minutes
-    // and 0 minutes to expiry.
+    // デーモンへのすべてのリクエストに添付される認証トークン。
+    // デフォルトではこのトークンは15分ごとに期限切れになるため、
+    // かなり連続的な間隔で更新する必要があります。ソケットサーバーは
+    // 期限が3分と0分に近づいたときに「token expiring」と「token expired」
+    // のイベントで応答します。
     private token = '';
 
-    // Connects to the websocket instance and sets the token for the initial request.
+    // Websocketインスタンスに接続し、初期リクエストのためのトークンを設定します。
     connect(url: string): this {
         this.url = url;
 
@@ -31,11 +31,11 @@ export class Websocket extends EventEmitter {
                     const { event, args } = JSON.parse(e.data);
                     args ? this.emit(event, ...args) : this.emit(event);
                 } catch (ex) {
-                    console.warn('Failed to parse incoming websocket message.', ex);
+                    console.warn('受信したwebsocketメッセージの解析に失敗しました。', ex);
                 }
             },
             onopen: () => {
-                // Clear the timers, we managed to connect just fine.
+                // タイマーをクリアし、無事に接続できました。
                 this.timer && clearTimeout(this.timer);
                 this.backoff = 5000;
 
@@ -55,15 +55,14 @@ export class Websocket extends EventEmitter {
             this.socket && this.socket.close();
             clearTimeout(this.timer);
 
-            // Re-attempt connecting to the socket.
+            // ソケットへの接続を再試行します。
             this.connect(url);
         }, this.backoff);
 
         return this;
     }
 
-    // Sets the authentication token to use when sending commands back and forth
-    // between the websocket instance.
+    // Websocketインスタンス間でコマンドを送受信する際に使用する認証トークンを設定します。
     setToken(token: string, isUpdate = false): this {
         this.token = token;
 

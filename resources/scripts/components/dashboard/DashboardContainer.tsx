@@ -37,9 +37,8 @@ export default () => {
     }, [servers?.pagination.currentPage]);
 
     useEffect(() => {
-        // Don't use react-router to handle changing this part of the URL, otherwise it
-        // triggers a needless re-render. We just want to track this in the URL incase the
-        // user refreshes the page.
+        // URLのこの部分をreact-routerで処理しないでください。それは不必要な再レンダリングを引き起こします。
+        // ユーザーがページをリフレッシュした場合にURLでこれを追跡したいだけです。
         window.history.replaceState(null, document.title, `/${page <= 1 ? '' : `?page=${page}`}`);
     }, [page]);
 
@@ -49,11 +48,11 @@ export default () => {
     }, [error]);
 
     return (
-        <PageContentBlock title={'Dashboard'} showFlashKey={'dashboard'}>
+        <PageContentBlock title={'ダッシュボード'} showFlashKey={'dashboard'}>
             {rootAdmin && (
                 <div css={tw`mb-2 flex justify-end items-center`}>
                     <p css={tw`uppercase text-xs text-neutral-400 mr-2`}>
-                        {showOnlyAdmin ? "Showing others' servers" : 'Showing your servers'}
+                        {showOnlyAdmin ? "他人のサーバーを表示" : 'あなたのサーバーを表示'}
                     </p>
                     <Switch
                         name={'show_all_servers'}
@@ -74,8 +73,8 @@ export default () => {
                         ) : (
                             <p css={tw`text-center text-sm text-neutral-400`}>
                                 {showOnlyAdmin
-                                    ? 'There are no other servers to display.'
-                                    : 'There are no servers associated with your account.'}
+                                    ? '他のサーバーは表示できません。'
+                                    : 'あなたのアカウントに関連付けられているサーバーはありません。'}
                             </p>
                         )
                     }

@@ -31,14 +31,14 @@ export default () => {
     const handleSubmission = ({ email }: Values, { setSubmitting, resetForm }: FormikHelpers<Values>) => {
         clearFlashes();
 
-        // If there is no token in the state yet, request the token and then abort this submit request
-        // since it will be re-submitted when the recaptcha data is returned by the component.
+        // まだトークンが状態にない場合は、トークンをリクエストしてからこの送信リクエストを中止します
+        // コンポーネントによって返されるrecaptchaデータが返されたときに再送信されます。
         if (recaptchaEnabled && !token) {
             ref.current!.execute().catch((error) => {
                 console.error(error);
 
                 setSubmitting(false);
-                addFlash({ type: 'error', title: 'Error', message: httpErrorToHuman(error) });
+                addFlash({ type: 'error', title: 'エラー', message: httpErrorToHuman(error) });
             });
 
             return;
@@ -47,11 +47,11 @@ export default () => {
         requestPasswordResetEmail(email, token)
             .then((response) => {
                 resetForm();
-                addFlash({ type: 'success', title: 'Success', message: response });
+                addFlash({ type: 'success', title: '成功', message: response });
             })
             .catch((error) => {
                 console.error(error);
-                addFlash({ type: 'error', title: 'Error', message: httpErrorToHuman(error) });
+                addFlash({ type: 'error', title: 'エラー', message: httpErrorToHuman(error) });
             })
             .then(() => {
                 setToken('');
@@ -67,24 +67,24 @@ export default () => {
             initialValues={{ email: '' }}
             validationSchema={object().shape({
                 email: string()
-                    .email('A valid email address must be provided to continue.')
-                    .required('A valid email address must be provided to continue.'),
+                    .email('続行するには有効なメールアドレスを入力してください。')
+                    .required('続行するには有効なメールアドレスを入力してください。'),
             })}
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
-                <LoginFormContainer title={'Request Password Reset'} css={tw`w-full flex`}>
+                <LoginFormContainer title={'パスワードリセットのリクエスト'} css={tw`w-full flex`}>
                     <Field
                         light
-                        label={'Email'}
+                        label={'メール'}
                         description={
-                            'Enter your account email address to receive instructions on resetting your password.'
+                            'パスワードをリセットする手順を受け取るために、アカウントのメールアドレスを入力してください。'
                         }
                         name={'email'}
                         type={'email'}
                     />
                     <div css={tw`mt-6`}>
                         <Button type={'submit'} size={'xlarge'} disabled={isSubmitting} isLoading={isSubmitting}>
-                            Send Email
+                            メールを送信
                         </Button>
                     </div>
                     {recaptchaEnabled && (
@@ -107,7 +107,7 @@ export default () => {
                             to={'/auth/login'}
                             css={tw`text-xs text-neutral-500 tracking-wide uppercase no-underline hover:text-neutral-700`}
                         >
-                            Return to Login
+                            ログインに戻る
                         </Link>
                     </div>
                 </LoginFormContainer>

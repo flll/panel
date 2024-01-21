@@ -27,26 +27,26 @@ export default () => {
     const setSchedules = ServerContext.useStoreActions((actions) => actions.schedules.setSchedules);
 
     useEffect(() => {
-        clearFlashes('schedules');
+        clearFlashes('スケジュール');
         getServerSchedules(uuid)
             .then((schedules) => setSchedules(schedules))
             .catch((error) => {
-                addError({ message: httpErrorToHuman(error), key: 'schedules' });
+                addError({ message: httpErrorToHuman(error), key: 'スケジュール' });
                 console.error(error);
             })
             .then(() => setLoading(false));
     }, []);
 
     return (
-        <ServerContentBlock title={'Schedules'}>
-            <FlashMessageRender byKey={'schedules'} css={tw`mb-4`} />
+        <ServerContentBlock title={'スケジュール'}>
+            <FlashMessageRender byKey={'スケジュール'} css={tw`mb-4`} />
             {!schedules.length && loading ? (
                 <Spinner size={'large'} centered />
             ) : (
                 <>
                     {schedules.length === 0 ? (
                         <p css={tw`text-sm text-center text-neutral-300`}>
-                            There are no schedules configured for this server.
+                            このサーバーにはスケジュールが設定されていません。
                         </p>
                     ) : (
                         schedules.map((schedule) => (
@@ -68,7 +68,7 @@ export default () => {
                         <div css={tw`mt-8 flex justify-end`}>
                             <EditScheduleModal visible={visible} onModalDismissed={() => setVisible(false)} />
                             <Button type={'button'} onClick={() => setVisible(true)}>
-                                Create schedule
+                                スケジュールを作成する
                             </Button>
                         </div>
                     </Can>

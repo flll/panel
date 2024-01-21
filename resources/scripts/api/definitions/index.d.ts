@@ -11,22 +11,22 @@ interface ModelWithRelationships extends Model {
 }
 
 /**
- * Allows a model to have optional relationships that are marked as being
- * present in a given pathway. This allows different API calls to specify the
- * "completeness" of a response object without having to make every API return
- * the same information, or every piece of logic do explicit null checking.
+ * モデルにオプショナルなリレーションシップを持たせ、特定のパスウェイで存在していると
+ * マークすることができます。これにより、異なるAPIコールがレスポンスオブジェクトの
+ * "完全性"を指定できるようになり、すべてのAPIが同じ情報を返す必要がなくなり、
+ * すべてのロジックが明示的なnullチェックを行う必要がなくなります。
  *
- * Example:
+ * 例：
  *  >> const user: WithLoaded<User, 'servers'> = {};
- *  >> // "user.servers" is no longer potentially undefined.
+ *  >> // "user.servers" はもはや潜在的にundefinedではありません。
  */
 type WithLoaded<M extends ModelWithRelationships, R extends keyof M['relationships']> = M & {
     relationships: MarkRequired<M['relationships'], R>;
 };
 
 /**
- * Helper type that allows you to infer the type of an object by giving
- * it the specific API request function with a return type. For example:
+ * APIリクエスト関数を特定の型で与えることによって、オブジェクトの型を推論するための
+ * ヘルパータイプです。例えば：
  *
  * type Egg = InferModel<typeof getEgg>;
  */

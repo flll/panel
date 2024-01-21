@@ -29,10 +29,10 @@ const RenameFileModal = ({ files, useMoveTerminology, ...props }: OwnProps) => {
         const len = name.split('/').length;
         if (files.length === 1) {
             if (!useMoveTerminology && len === 1) {
-                // Rename the file within this directory.
+                // このディレクトリ内のファイル名を変更します。
                 mutate((data) => data.map((f) => (f.name === files[0] ? { ...f, name } : f)), false);
             } else if (useMoveTerminology || len > 1) {
-                // Remove the file from this directory since they moved it elsewhere.
+                // ファイルが他の場所に移動したので、このディレクトリから削除します。
                 mutate((data) => data.filter((f) => f.name !== files[0]), false);
             }
         }
@@ -66,22 +66,22 @@ const RenameFileModal = ({ files, useMoveTerminology, ...props }: OwnProps) => {
                                     type={'string'}
                                     id={'file_name'}
                                     name={'name'}
-                                    label={'File Name'}
+                                    label={'ファイル名'}
                                     description={
                                         useMoveTerminology
-                                            ? 'Enter the new name and directory of this file or folder, relative to the current directory.'
+                                            ? '現在のディレクトリに対して相対的に、このファイルまたはフォルダの新しい名前とディレクトリを入力してください。'
                                             : undefined
                                     }
                                     autoFocus
                                 />
                             </div>
                             <div css={tw`w-full sm:w-auto mt-4 sm:mt-0`}>
-                                <Button css={tw`w-full`}>{useMoveTerminology ? 'Move' : 'Rename'}</Button>
+                                <Button css={tw`w-full`}>{useMoveTerminology ? '移動' : '名前を変更'}</Button>
                             </div>
                         </div>
                         {useMoveTerminology && (
                             <p css={tw`text-xs mt-2 text-neutral-400`}>
-                                <strong css={tw`text-neutral-200`}>New location:</strong>
+                                <strong css={tw`text-neutral-200`}>新しい場所:</strong>
                                 &nbsp;/home/container/{join(directory, values.name).replace(/^(\.\.\/|\/)+/, '')}
                             </p>
                         )}

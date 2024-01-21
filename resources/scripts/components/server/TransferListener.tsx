@@ -7,7 +7,7 @@ const TransferListener = () => {
     const getServer = ServerContext.useStoreActions((actions) => actions.server.getServer);
     const setServerFromState = ServerContext.useStoreActions((actions) => actions.server.setServerFromState);
 
-    // Listen for the transfer status event, so we can update the state of the server.
+    // サーバーの状態を更新するために転送ステータスイベントをリッスンします。
     useWebsocketEvent(SocketEvent.TRANSFER_STATUS, (status: string) => {
         if (status === 'pending' || status === 'processing') {
             setServerFromState((s) => ({ ...s, isTransferring: true }));
@@ -23,7 +23,7 @@ const TransferListener = () => {
             return;
         }
 
-        // Refresh the server's information as it's node and allocations were just updated.
+        // ノードと割り当てが更新されたので、サーバーの情報をリフレッシュします。
         getServer(uuid).catch((error) => console.error(error));
     });
 

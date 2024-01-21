@@ -43,6 +43,6 @@ const Field = forwardRef<HTMLInputElement, Props>(
         </FormikField>
     )
 );
-Field.displayName = 'Field';
+Field.displayName = 'フィールド';
 
 export default Field;

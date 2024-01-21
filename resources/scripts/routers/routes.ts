@@ -14,18 +14,18 @@ import AccountSSHContainer from '@/components/dashboard/ssh/AccountSSHContainer'
 import ActivityLogContainer from '@/components/dashboard/activity/ActivityLogContainer';
 import ServerActivityLogContainer from '@/components/server/ServerActivityLogContainer';
 
-// Each of the router files is already code split out appropriately — so
-// all of the items above will only be loaded in when that router is loaded.
+// 各ルーターファイルは適切にコード分割されているため、
+// 上記の項目はそのルーターがロードされたときにのみロードされます。
 //
-// These specific lazy loaded routes are to avoid loading in heavy screens
-// for the server dashboard when they're only needed for specific instances.
+// これらの特定の遅延ロードされたルートは、サーバーダッシュボードの重い画面を
+// 特定のインスタンスにのみ必要な場合にロードするのを避けるためです。
 const FileEditContainer = lazy(() => import('@/components/server/files/FileEditContainer'));
 const ScheduleEditContainer = lazy(() => import('@/components/server/schedules/ScheduleEditContainer'));
 
 interface RouteDefinition {
     path: string;
-    // If undefined is passed this route is still rendered into the router itself
-    // but no navigation link is displayed in the sub-navigation menu.
+    // undefinedが渡された場合、このルートはルーター自体にはレンダリングされますが、
+    // サブナビゲーションメニューにはナビゲーションリンクが表示されません。
     name: string | undefined;
     component: React.ComponentType;
     exact?: boolean;
@@ -36,9 +36,9 @@ interface ServerRouteDefinition extends RouteDefinition {
 }
 
 interface Routes {
-    // All of the routes available under "/account"
+    // "/account"の下で利用可能なすべてのルート
     account: RouteDefinition[];
-    // All of the routes available under "/server/:id"
+    // "/server/:id"の下で利用可能なすべてのルート
     server: ServerRouteDefinition[];
 }
 
@@ -46,23 +46,23 @@ export default {
     account: [
         {
             path: '/',
-            name: 'Account',
+            name: 'アカウント',
             component: AccountOverviewContainer,
             exact: true,
         },
         {
             path: '/api',
-            name: 'API Credentials',
+            name: 'APIクレデンシャル',
             component: AccountApiContainer,
         },
         {
             path: '/ssh',
-            name: 'SSH Keys',
+            name: 'SSHキー',
             component: AccountSSHContainer,
         },
         {
             path: '/activity',
-            name: 'Activity',
+            name: 'アクティビティ',
             component: ActivityLogContainer,
         },
     ],
@@ -70,14 +70,14 @@ export default {
         {
             path: '/',
             permission: null,
-            name: 'Console',
+            name: 'コンソール',
             component: ServerConsole,
             exact: true,
         },
         {
             path: '/files',
             permission: 'file.*',
-            name: 'Files',
+            name: 'ファイル',
             component: FileManagerContainer,
         },
         {
@@ -89,13 +89,13 @@ export default {
         {
             path: '/databases',
             permission: 'database.*',
-            name: 'Databases',
+            name: 'データベース',
             component: DatabasesContainer,
         },
         {
             path: '/schedules',
             permission: 'schedule.*',
-            name: 'Schedules',
+            name: 'スケジュール',
             component: ScheduleContainer,
         },
         {
@@ -107,37 +107,37 @@ export default {
         {
             path: '/users',
             permission: 'user.*',
-            name: 'Users',
+            name: 'ユーザー',
             component: UsersContainer,
         },
         {
             path: '/backups',
             permission: 'backup.*',
-            name: 'Backups',
+            name: 'バックアップ',
             component: BackupContainer,
         },
         {
             path: '/network',
             permission: 'allocation.*',
-            name: 'Network',
+            name: 'ネットワーク',
             component: NetworkContainer,
         },
         {
             path: '/startup',
             permission: 'startup.*',
-            name: 'Startup',
+            name: 'スタートアップ',
             component: StartupContainer,
         },
         {
             path: '/settings',
             permission: ['settings.*', 'file.sftp'],
-            name: 'Settings',
+            name: '設定',
             component: SettingsContainer,
         },
         {
             path: '/activity',
             permission: 'activity.*',
-            name: 'Activity',
+            name: 'アクティビティ',
             component: ServerActivityLogContainer,
         },
     ],

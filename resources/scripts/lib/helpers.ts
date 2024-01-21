@@ -1,6 +1,5 @@
 /**
- * Given a valid six character HEX color code, converts it into its associated
- * RGBA value with a user controllable alpha channel.
+ * 有効な6文字のHEXカラーコードを受け取り、ユーザーが制御可能なアルファチャンネルを持つ関連するRGBA値に変換します。
  */
 function hexToRgba(hex: string, alpha = 1): string {
     // noinspection RegExpSimplifiable

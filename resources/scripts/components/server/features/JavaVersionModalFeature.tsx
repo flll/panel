@@ -14,11 +14,11 @@ import getServerStartup from '@/api/swr/getServerStartup';
 import InputSpinner from '@/components/elements/InputSpinner';
 
 const MATCH_ERRORS = [
-    'minecraft 1.17 requires running the server with java 16 or above',
-    'minecraft 1.18 requires running the server with java 17 or above',
+    'minecraft 1.17はjava 16以上でサーバーを実行する必要があります',
+    'minecraft 1.18はjava 17以上でサーバーを実行する必要があります',
     'java.lang.unsupportedclassversionerror',
-    'unsupported major.minor version',
-    'has been compiled by a more recent version of the java runtime',
+    'サポートされていないメジャー.マイナーバージョン',
+    'javaランタイムのより新しいバージョンでコンパイルされています',
 ];
 
 const JavaVersionModalFeature = () => {
@@ -76,11 +76,11 @@ const JavaVersionModalFeature = () => {
             showSpinnerOverlay={loading}
         >
             <FlashMessageRender key={'feature:javaVersion'} css={tw`mb-4`} />
-            <h2 css={tw`text-2xl mb-4 text-neutral-100`}>Unsupported Java Version</h2>
+            <h2 css={tw`text-2xl mb-4 text-neutral-100`}>サポートされていないJavaバージョン</h2>
             <p css={tw`mt-4`}>
-                This server is currently running an unsupported version of Java and cannot be started.
+                このサーバーは現在サポートされていないバージョンのJavaを実行しており、起動できません。
                 <Can action={'startup.docker-image'}>
-                    &nbsp;Please select a supported version from the list below to continue starting the server.
+                    &nbsp;サーバーの起動を続行するには、以下のリストからサポートされているバージョンを選択してください。
                 </Can>
             </p>
             <Can action={'startup.docker-image'}>
@@ -102,11 +102,11 @@ const JavaVersionModalFeature = () => {
             </Can>
             <div css={tw`mt-8 flex flex-col sm:flex-row justify-end sm:space-x-4 space-y-4 sm:space-y-0`}>
                 <Button isSecondary onClick={() => setVisible(false)} css={tw`w-full sm:w-auto`}>
-                    Cancel
+                    キャンセル
                 </Button>
                 <Can action={'startup.docker-image'}>
                     <Button onClick={updateJava} css={tw`w-full sm:w-auto`}>
-                        Update Docker Image
+                        Dockerイメージを更新
                     </Button>
                 </Can>
             </div>

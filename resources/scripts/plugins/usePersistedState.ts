@@ -8,9 +8,9 @@ export function usePersistedState<S = undefined>(
         try {
             const item = localStorage.getItem(key);
 
-            return JSON.parse(item || String(defaultValue));
+            return item ? JSON.parse(item) : defaultValue;
         } catch (e) {
-            console.warn('Failed to retrieve persisted value from store.', e);
+            console.warn('ストアから永続化された値を取得できませんでした。', e);
 
             return defaultValue;
         }
