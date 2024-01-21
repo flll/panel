@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="alert alert-danger">
-                    Your Panel is currently configured to read settings from the environment only. You will need to set <code>APP_ENVIRONMENT_ONLY=false</code> in your environment file in order to load settings dynamically.
+                    あなたのパネルは現在、環境のみから設定を読み込むように設定されています。動的に設定を読み込むためには、環境ファイルで<code>APP_ENVIRONMENT_ONLY=false</code>を設定する必要があります。
                 </div>
             </div>
         </div>

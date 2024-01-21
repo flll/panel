@@ -1,52 +1,49 @@
-[![Logo Image](https://cdn.pterodactyl.io/logos/new/pterodactyl_logo.png)](https://pterodactyl.io)
+[![ロゴ画像](https://cdn.pterodactyl.io/logos/new/pterodactyl_logo.png)](https://pterodactyl.io)
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/pterodactyl/panel/ci.yaml?label=Tests&style=for-the-badge&branch=1.0-develop)
+![GitHub ワークフローステータス](https://img.shields.io/github/actions/workflow/status/pterodactyl/panel/ci.yaml?label=テスト&style=for-the-badge&branch=1.0-develop)
 ![Discord](https://img.shields.io/discord/122900397965705216?label=Discord&logo=Discord&logoColor=white&style=for-the-badge)
-![GitHub Releases](https://img.shields.io/github/downloads/pterodactyl/panel/latest/total?style=for-the-badge)
-![GitHub contributors](https://img.shields.io/github/contributors/pterodactyl/panel?style=for-the-badge)
+![GitHub リリース](https://img.shields.io/github/downloads/pterodactyl/panel/latest/total?style=for-the-badge)
+![GitHub 貢献者](https://img.shields.io/github/contributors/pterodactyl/panel?style=for-the-badge)
 
-# Pterodactyl Panel
+# Pterodactyl パネル
 
-Pterodactyl® is a free, open-source game server management panel built with PHP, React, and Go. Designed with security 
-in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive
-UI to end users.
+Pterodactyl®は、PHP、React、およびGoを使用して構築された無料のオープンソースゲームサーバー管理パネルです。セキュリティを念頭に置いて設計されており、Pterodactylはすべてのゲームサーバーを分離されたDockerコンテナで実行しながら、エンドユーザーに美しく直感的なUIを提供します。
 
-Stop settling for less. Make game servers a first class citizen on your platform.
+妥協するのをやめましょう。あなたのプラットフォームでゲームサーバーを第一級の市民にしましょう。
 
-![Image](https://cdn.pterodactyl.io/site-assets/pterodactyl_v1_demo.gif)
+![画像](https://cdn.pterodactyl.io/site-assets/pterodactyl_v1_demo.gif)
 
-## Documentation
+## ドキュメント
 
-* [Panel Documentation](https://pterodactyl.io/panel/1.0/getting_started.html)
-* [Wings Documentation](https://pterodactyl.io/wings/1.0/installing.html)
-* [Community Guides](https://pterodactyl.io/community/about.html)
-* Or, get additional help [via Discord](https://discord.gg/pterodactyl)
+* [パネルドキュメント](https://pterodactyl.io/panel/1.0/getting_started.html)
+* [Wings ドキュメント](https://pterodactyl.io/wings/1.0/installing.html)
+* [コミュニティガイド](https://pterodactyl.io/community/about.html)
+* または、[Discord 経由で追加のヘルプを取得](https://discord.gg/pterodactyl)
 
-## Sponsors
+## スポンサー
 
-I would like to extend my sincere thanks to the following sponsors for helping fund Pterodactyl's development.
-[Interested in becoming a sponsor?](https://github.com/sponsors/matthewpi)
+Pterodactylの開発を支援してくれた以下のスポンサーに心からの感謝を申し上げます。
+[スポンサーになることに興味がありますか？](https://github.com/sponsors/matthewpi)
 
-| Company                                                               | About                                                                                                                                                                                                 |
+| 会社                                                               | 紹介                                                                                                                                                                                                 |
 |-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**WISP**](https://wisp.gg)                                           | Extra features.                                                                                                                                                                                       |
-| [**Aussie Server Hosts**](https://aussieserverhosts.com/)             | No frills Australian Owned and operated High Performance Server hosting for some of the most demanding games serving Australia and New Zealand.                                                       |
-| [**WemX**](https://wemx.net/)                                         | WemX helps automate your hosting company or SaaS business by automating billing, user management, authentication, and much more.                                                                      |
-| [**BisectHosting**](https://www.bisecthosting.com/)                   | BisectHosting provides Minecraft, Valheim and other server hosting services with the highest reliability and lightning fast support since 2012.                                                       |
-| [**MineStrator**](https://minestrator.com/)                           | Looking for the most highend French hosting company for your minecraft server? More than 24,000 members on our discord trust us. Give us a try!                                                       |
-| [**VibeGAMES**](https://vibegames.net/)                               | VibeGAMES is a game server provider that specializes in DDOS protection for the games we offer. We have multiple locations in the US, Brazil, France, Germany, Singapore, Australia and South Africa. |
-| [**DutchIS**](https://dutchis.net?ref=pterodactyl)                    | DutchIS provides instant infrastructure such as pay per use VPS hosting. Start your game hosting journey on DutchIS.                                                                                  |
-| [**Skoali**](https://skoali.com/)                                     | Skoali is a French company that hosts game servers and other types of services (VPS, WEB, Dedicated servers, ...). We also have a free plan for Minecraft and Garry's Mod.                            |
-| [**Rabbit Computing**](https://www.rabbitcomputing.com/link.php?id=5) | Rabbit Computing offers powerful VPS servers, highly available game hosting, and fully unlimited web hosting. Use code README for 20% off your first three months!                                    |
+| [**WISP**](https://wisp.gg)                                           | 追加機能。                                                                                                                                                                                           |
+| [**オーストラリアサーバーホスト**](https://aussieserverhosts.com/)   | オーストラリアとニュージーランドにサービスを提供する、シンプルなオーストラリアの高性能サーバーホスティング。                                                                                       |
+| [**WemX**](https://wemx.net/)                                         | WemXは、課金、ユーザー管理、認証などを自動化することで、ホスティング会社やSaaSビジネスを支援します。                                                                                              |
+| [**BisectHosting**](https://www.bisecthosting.com/)                   | BisectHostingは、2012年以来、最高の信頼性と迅速なサポートでMinecraft、Valheim、その他のサーバーホスティングサービスを提供しています。                                                             |
+| [**MineStrator**](https://minestrator.com/)                           | フランスで最も高品質なホスティング会社をお探しですか？私たちのDiscordには24,000人以上のメンバーが信頼しています。試してみてください！                                                             |
+| [**VibeGAMES**](https://vibegames.net/)                               | VibeGAMESは、提供するゲームのDDOS保護を専門とするゲームサーバープロバイダーです。米国、ブラジル、フランス、ドイツ、シンガポール、オーストラリア、南アフリカに複数のロケーションがあります。 |
+| [**DutchIS**](https://dutchis.net?ref=pterodactyl)                    | DutchISは、使用量に応じたVPSホスティングなどの即時インフラストラクチャを提供します。DutchISでゲームホスティングの旅を始めましょう。                                                                |
+| [**Skoali**](https://skoali.com/)                                     | Skoaliは、ゲームサーバーやその他のタイプのサービス（VPS、WEB、専用サーバーなど）をホストするフランスの会社です。MinecraftとGarry's Modの無料プランもあります。                                |
+| [**Rabbit Computing**](https://www.rabbitcomputing.com/link.php?id=5) | Rabbit Computingは、強力なVPSサーバー、高可用性のゲームホスティング、完全無制限のウェブホスティングを提供します。コードREADMEを使用すると、最初の3か月間20％オフになります！                  |
 
-### Supported Games
+### サポートされているゲーム
 
-Pterodactyl supports a wide variety of games by utilizing Docker containers to isolate each instance. This gives
-you the power to run game servers without bloating machines with a host of additional dependencies.
+Pterodactylは、各インスタンスを分離するためにDockerコンテナを利用することで、さまざまなゲームをサポートしています。これにより、追加の依存関係でマシンを膨らませることなく、ゲームサーバーを実行する力を得ることができます。
 
-Some of our core supported games include:
+私たちのコアとなるサポートされているゲームには、以下のものが含まれます：
 
-* Minecraft — including Paper, Sponge, Bungeecord, Waterfall, and more
+* Minecraft — Paper、Sponge、Bungeecord、Waterfallなどを含む
 * Rust
 * Terraria
 * Teamspeak
@@ -56,8 +53,7 @@ Some of our core supported games include:
 * Garry's Mod
 * ARK: Survival Evolved
 
-In addition to our standard nest of supported games, our community is constantly pushing the limits of this software
-and there are plenty more games available provided by the community. Some of these games include:
+標準の巣のサポートされているゲームに加えて、私たちのコミュニティはこのソフトウェアの限界を常に押し広げており、コミュニティによって提供される多くのゲームがあります。これらのゲームには以下のものが含まれます：
 
 * Factorio
 * San Andreas: MP
@@ -65,11 +61,11 @@ and there are plenty more games available provided by the community. Some of the
 * Squad
 * Xonotic
 * Starmade
-* Discord ATLBot, and most other Node.js/Python discord bots
-* [and many more...](https://github.com/parkervcp/eggs)
+* Discord ATLBot、その他のほとんどのNode.js/Python Discordボット
+* [その他多数...](https://github.com/parkervcp/eggs)
 
-## License
+## ライセンス
 
-Pterodactyl® Copyright © 2015 - 2022 Dane Everitt and contributors.
+Pterodactyl® 著作権 © 2015 - 2022 Dane Everittおよび貢献者。
 
-Code released under the [MIT License](./LICENSE.md).
+[MIT ライセンス](./LICENSE.md)の下でリリースされたコード。

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <style type="text/css" rel="stylesheet" media="all">
-        /* Media Queries */
+        /* メディアクエリ */
         @media only screen and (max-width: 500px) {
             .button {
                 width: 100% !important;
@@ -18,12 +18,12 @@
 <?php
 
 $style = [
-    /* Layout ------------------------------ */
+    /* レイアウト ------------------------------ */
 
     'body' => 'margin: 0; padding: 0; width: 100%; background-color: #F2F4F6;',
     'email-wrapper' => 'width: 100%; margin: 0; padding: 0; background-color: #F2F4F6;',
 
-    /* Masthead ----------------------- */
+    /* ヘッダー ----------------------- */
 
     'email-masthead' => 'padding: 25px 0; text-align: center;',
     'email-masthead_name' => 'font-size: 16px; font-weight: bold; color: #2F3133; text-decoration: none; text-shadow: 0 1px 0 white;',
@@ -35,12 +35,12 @@ $style = [
     'email-footer' => 'width: auto; max-width: 570px; margin: 0 auto; padding: 0; text-align: center;',
     'email-footer_cell' => 'color: #AEAEAE; padding: 35px; text-align: center;',
 
-    /* Body ------------------------------ */
+    /* 本文 ------------------------------ */
 
     'body_action' => 'width: 100%; margin: 30px auto; padding: 0; text-align: center;',
     'body_sub' => 'margin-top: 25px; padding-top: 25px; border-top: 1px solid #EDEFF2;',
 
-    /* Type ------------------------------ */
+    /* 文字 ------------------------------ */
 
     'anchor' => 'color: #3869D4;',
     'header-1' => 'margin-top: 0; color: #2F3133; font-size: 19px; font-weight: bold; text-align: left;',
@@ -48,7 +48,7 @@ $style = [
     'paragraph-sub' => 'margin-top: 0; color: #74787E; font-size: 12px; line-height: 1.5em;',
     'paragraph-center' => 'text-align: center;',
 
-    /* Buttons ------------------------------ */
+    /* ボタン ------------------------------ */
 
     'button' => 'display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;
                  background-color: #3869D4; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;
@@ -67,7 +67,7 @@ $style = [
         <tr>
             <td style="{{ $style['email-wrapper'] }}" align="center">
                 <table width="100%" cellpadding="0" cellspacing="0">
-                    <!-- Logo -->
+                    <!-- ロゴ -->
                     <tr>
                         <td style="{{ $style['email-masthead'] }}">
                             <a style="{{ $fontFamily }} {{ $style['email-masthead_name'] }}" href="{{ url('/') }}" target="_blank">
@@ -76,33 +76,33 @@ $style = [
                         </td>
                     </tr>
 
-                    <!-- Email Body -->
+                    <!-- メール本文 -->
                     <tr>
                         <td style="{{ $style['email-body'] }}" width="100%">
                             <table style="{{ $style['email-body_inner'] }}" align="center" width="570" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td style="{{ $fontFamily }} {{ $style['email-body_cell'] }}">
-                                        <!-- Greeting -->
+                                        <!-- 挨拶 -->
                                         <h1 style="{{ $style['header-1'] }}">
                                             @if (! empty($greeting))
                                                 {{ $greeting }}
                                             @else
                                                 @if ($level == 'error')
-                                                    Whoops!
+                                                    おっと！
                                                 @else
-                                                    Hello!
+                                                    こんにちは！
                                                 @endif
                                             @endif
                                         </h1>
 
-                                        <!-- Intro -->
+                                        <!-- イントロ -->
                                         @foreach ($introLines as $line)
                                             <p style="{{ $style['paragraph'] }}">
                                                 {{ $line }}
                                             </p>
                                         @endforeach
 
-                                        <!-- Action Button -->
+                                        <!-- アクションボタン -->
                                         @if (isset($actionText))
                                             <table style="{{ $style['body_action'] }}" align="center" width="100%" cellpadding="0" cellspacing="0">
                                                 <tr>
@@ -131,26 +131,25 @@ $style = [
                                             </table>
                                         @endif
 
-                                        <!-- Outro -->
+                                        <!-- アウトロ -->
                                         @foreach ($outroLines as $line)
                                             <p style="{{ $style['paragraph'] }}">
                                                 {{ $line }}
                                             </p>
                                         @endforeach
 
-                                        <!-- Salutation -->
+                                        <!-- 署名 -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Regards,<br>{{ config('app.name') }}
+                                            よろしくお願いします。<br>{{ config('app.name') }}
                                         </p>
 
-                                        <!-- Sub Copy -->
+                                        <!-- サブコピー -->
                                         @if (isset($actionText))
                                             <table style="{{ $style['body_sub'] }}">
                                                 <tr>
                                                     <td style="{{ $fontFamily }}">
                                                         <p style="{{ $style['paragraph-sub'] }}">
-                                                            If you’re having trouble clicking the "{{ $actionText }}" button,
-                                                            copy and paste the URL below into your web browser:
+                                                            "{{ $actionText }}"ボタンをクリックするのに問題がある場合は、以下のURLをウェブブラウザにコピーして貼り付けてください：
                                                         </p>
 
                                                         <p style="{{ $style['paragraph-sub'] }}">
@@ -168,7 +167,7 @@ $style = [
                         </td>
                     </tr>
 
-                    <!-- Footer -->
+                    <!-- フッター -->
                     <tr>
                         <td>
                             <table style="{{ $style['email-footer'] }}" align="center" width="570" cellpadding="0" cellspacing="0">
@@ -177,7 +176,7 @@ $style = [
                                         <p style="{{ $style['paragraph-sub'] }}">
                                             &copy; {{ date('Y') }}
                                             <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ config('app.name') }}</a>.
-                                            All rights reserved.
+                                            全ての権利を保有します。
                                         </p>
                                     </td>
                                 </tr>

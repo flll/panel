@@ -1,24 +1,19 @@
-# The MIT License (MIT)
+# MITライセンス (MIT)
 
 ```
 Pterodactyl®
-Copyright © Dane Everitt <dane@daneeveritt.com> and contributors
+Copyright © Dane Everitt <dane@daneeveritt.com> および貢献者
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+本ソフトウェアおよび関連するドキュメントファイル（以下、「ソフトウェア」といいます）のコピーを取得するすべての人に対し、
+ソフトウェアを制限なく取り扱うことを無償で許可します。これには、ソフトウェアの使用、複製、変更、結合、出版、配布、
+サブライセンス、および/または販売する権利、およびソフトウェアを提供される者に同様の権利を許可する権利が含まれますが、
+これらに限定されません。
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+上記の著作権表示および本許諾表示を、ソフトウェアのすべてのコピーまたは実質的な部分に含めるものとします。
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+本ソフトウェアは「現状のまま」で提供され、明示または暗示を問わず、いかなる種類の保証も行われません。
+これには、商品性、特定の目的への適合性、および権利侵害がないことの保証も含まれますが、これらに限定されません。
+いかなる場合も、著作者または著作権者は、契約、不法行為、またはその他の行為に起因するか、または
+ソフトウェアの使用またはその他の取引に関連して生じるいかなる請求、損害、その他の責任についても責任を負わないものとします。
 ```
+

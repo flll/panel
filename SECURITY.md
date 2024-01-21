@@ -1,20 +1,20 @@
-# Security Policy
+# セキュリティポリシー
 
-## Supported Versions
+## サポートされているバージョン
 
-The following versions of Pterodactyl are receiving active support and maintenance. Any security vulnerabilities discovered must be reproducible in supported versions.
+以下のPterodactylのバージョンは、アクティブなサポートとメンテナンスを受けています。発見されたセキュリティの脆弱性は、サポートされているバージョンで再現可能でなければなりません。
 
-| Panel  | Daemon       | Supported          |
+| パネル  | デーモン     | サポート状況        |
 |--------|--------------|--------------------|
 | 1.10.x | wings@1.7.x  | :white_check_mark: |
 | 1.11.x | wings@1.11.x | :white_check_mark: |
 | 0.7.x  | daemon@0.6.x | :x:                |
 
 
-## Reporting a Vulnerability
+## 脆弱性の報告
 
-Please reach out directly to any project team member on Discord when reporting a security vulnerability, or you can email `matthew@pterodactyl.io`.
+セキュリティの脆弱性を報告する際は、Discordでプロジェクトチームのメンバーに直接連絡するか、`matthew@pterodactyl.io`までメールしてください。
 
-We make every effort to respond as soon as possible, although it may take a day or two for us to sync internally and determine the severity of the report and its impact. Please, _do not_ use a public facing channel or GitHub issues to report sensitive security issues.
+できるだけ早く対応するよう努力していますが、内部での調整と報告の重大性や影響を判断するために、1、2日かかることがあります。セキュリティ上の問題を公に報告するために公開チャンネルやGitHubの問題を使用しないでください。
 
-As part of our process, we will create a security advisory for the affected versions and disclose it publicly, usually two to four weeks after a releasing a version that addresses it.
+プロセスの一環として、影響を受けるバージョンのセキュリティアドバイザリを作成し、通常はそれを解決するバージョンをリリースした後2週間から4週間で公開します。
